@@ -55,6 +55,7 @@ body {
   font-weight: 500;
   font-size: 1.8rem;
   transition: all 0.3s;
+  padding: 1.6rem 3.2rem;
 }
 
 .main-nav-link:hover,
@@ -121,13 +122,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.2rem;
 }
 
-.footer-copyright {
+/* .footer-copyright {
   font-size: 1rem;
   color: #767676;
   grid-column: 1 / -1;
-}
+  padding-top: 3.2rem;
+} */
 
 .social-links {
   list-style: none;
@@ -138,4 +141,9 @@ body {
 .social-icon {
   height: 3.2rem;
   width: 3.2rem;
+}
+
+.footer-address {
+  font-size: 1.6rem;
+  color: #767676;
 }
