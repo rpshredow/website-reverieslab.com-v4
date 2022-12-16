@@ -157,3 +157,29 @@ body {
   font-size: 2rem;
   color: #767676;
 }
+
+.terrain {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  /* align-items: flex-start; */
+}
+
+.terrain-heading {
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+}
+
+.terrain-img {
+  width: 50rem;
+  height: auto;
+}
+
+.terrain-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
