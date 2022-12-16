@@ -15,169 +15,60 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script defer type="module" src="/templates.js"></script>
   </head>
   <body>
-    <header class="header">
-      <a href="../index.html">
-        <img class="logo" src="../logo.webp" alt="Reveries Lab Logo" />
-      </a>
-      <nav class="main-nav">
-        <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="../index.html">Home</a></li>
-          <li>
-            <a class="main-nav-link" href="../projects/index.html">Projects</a>
-          </li>
-          <li>
-            <a class="main-nav-link" href="../research/index.html">Research</a>
-          </li>
-          <li><a class="main-nav-link" href="../about.html">About</a></li>
-        </ul>
-      </nav>
-    </header>
+    <my-header></my-header>
     <section>
       <div>
-        <h3>Raspberry Pi 4 Cluster</h3>
+        <h3>3D Terrain using Three.js</h3>
+
         <p>
-          I built a Raspberry Pi cluster as a cheaper way to become more
-          familiar with cluster computing and to learn technologies such as
-          containers like Docker, Kubernetes, Apache Hadoop, Apache Spark and
-          Message Passing Interface (MPI).
+          Use tab to enter the input boxes and use ctrl-v to paste latitude,
+          longitude, and zoom. The latitude and longitude of Mt Elbert is
+          39.1178 and 106.4452 and the best zooms are between 10 and 15.
         </p>
-        <img src="/media/cluster5.jpg" width="700" />
-        <ol type="1">
-          <li>
-            Raspberry Pi 4 - 4GB version
-            <a
-              href="https://www.amazon.com/gp/product/B07TC2BK1X/ref=ppx_yo_dt_b_asin_title_o05_s01?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            32GB microSD card x 5
-            <a
-              href="https://www.amazon.com/gp/product/B07WJ359P6/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            6-Port USB Charger
-            <a
-              href="https://www.amazon.com/gp/product/B077G4MNXJ/ref=ppx_yo_dt_b_asin_title_o05_s02?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            USB Type C Cable x 5
-            <a
-              href="https://www.amazon.com/gp/product/B01I4ZOIQY/ref=ppx_yo_dt_b_asin_title_o05_s01?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            Micro HDMI to HDMI Cable x 2
-            <a
-              href="https://www.amazon.com/gp/product/B07K21HSQX/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            Raspberry Pi 4 Cluster Case with Fans
-            <a
-              href="https://www.amazon.com/gp/product/B07CTG5N3V/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            5-Port Gigabit Ethernet Port
-            <a
-              href="https://www.amazon.com/gp/product/B07QLV899F/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-          <li>
-            6in Ethernet Cable x 5
-            <a
-              href="https://www.amazon.com/gp/product/B00FTGETWK/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1"
-              >Amazon Link</a
-            >
-          </li>
-        </ol>
-        <img src="/media/cluster1.jpg" width="700" />
         <p>
-          The USB charger puts out 60 watts which is about ~15 watts per Pi as
-          the ethernet switch consumes only a few watts. They are connect
-          through the USB Type-C cables.
+          This project was to turn a AWS public dataset for terrain heights into
+          3D representation using a WebGL wrapper called Three.js. Three.js
+          makes using WebGL easier to use. The terrain data is represented in
+          .png images whose dimensions are 256x256 where terrain heights are
+          decoded from the RGB values.
         </p>
-        <img src="/media/cluster2.jpg" width="700" />
         <p>
-          Only 1 cable needed to be fabricated from an old USB cable and a DC
-          port to power the Ethernet Switch. One of the reasons the switch was
-          chosen was because it operates on 5 volts which is the same voltage as
-          USB operates on.
+          The last three numbers in the URL are the zoom, x tile and y tile,
+          https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png.
+          The tiles are retrieved by a formula where you input the latitude and
+          longitude you want and zoom and it gives the x and y values of the
+          tile.
         </p>
-        <img src="/media/cluster3.jpg" width="700" />
+        <img src="/media/terrain1.jpg" width="700" />
         <p>
-          Every Pi's SD card was loaded up with Raspbian, the Raspberry Pi OS,
-          and assigned a name and a static IP address as well as some BASH
-          scripts to automate SSH and issuing commands to all the nodes of the
-          cluster.
+          The pipeline goes as follows, the user inputs the zoom, latitude and
+          longitude of the area they want displayed into the page, that is
+          converted to x and y tile values for that zoom value with JavaScript.
+          Neighboring tiles are retrieved by adding and subtracting from the x
+          and y tile values. Tile zoom, x and y coordinate information is sent
+          to a Java Servlet in .json format that is located in a AWS EC2 (Amazon
+          Web Services Elastic Compute Cloud) instance. The java program
+          retrieves the .png image it then decodes the RGB (red, green, blue)
+          values from that .png image and gets the height data then sends the
+          height data back to the web app in .json format and three.js receives
+          the information and displays a tile based on the height data. The app
+          renders the center tile and several neighboring tiles.
         </p>
-        <img src="/media/cluster4.jpg" width="700" />
+        <img src="/media/terrain3.jpg" width="700" />
         <p>
-          Even though the Raspberry Pi 4 comes with wifi I chose an ethernet
-          switch and ethernet connections to minimize latency and maximize
-          bandwidth as much as possible for better worker and master
-          communications. The Raspberry Pi 4 reaches actual gigabit speeds
-          unlike previous versions.
+          Further work that needs to be done is to prefetch information for more
+          surrounding tiles and for different zoom levels at that location.
+          Multithreaded processing could be used to retrieve and decode that
+          information faster. The ideal data structure would be a hash table
+          because very zoom, x and y value for each tile is unique and hash
+          tables provide a constant time complexity which is very fast.
         </p>
+        <img src="/media/terrain2.jpg" width="700" />
       </div>
     </section>
-    <footer class="footer">
-      <div class="container grid-footer">
-        <div class="footer-socials">
-          <ul class="social-links">
-            <li>
-              <a class="footer-link" href="https://www.instagram.com/rshredow/"
-                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.facebook.com/robert.shredow"
-                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a class="footer-link" href="https://github.com/rpshredow"
-                ><ion-icon class="social-icon" name="logo-github"></ion-icon
-              ></a>
-            </li>
-            <li>
-              <a
-                class="footer-link"
-                href="https://www.linkedin.com/in/robert-shredow-37995393/"
-                ><ion-icon class="social-icon" name="logo-linkedin"></ion-icon
-              ></a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-address">
-            111 College Hill St, Cheney Washington 99004
-          </p>
-          <a class="footer-link" href="mailto:rshredow@gmail.com"
-            >rshredow@gmail.com</a
-          >
-          <a class="footer-link" href="tel:509-294-5271">509-294-5271</a>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-copyright">
-            Copyright &copy; 2022 by Robert Shredow, All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+    <my-footer></my-footer>
   </body>
 </html>

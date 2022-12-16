@@ -125,12 +125,16 @@ body {
   gap: 1.2rem;
 }
 
-/* .footer-copyright {
+.footer-copyright {
   font-size: 1rem;
   color: #767676;
-  grid-column: 1 / -1;
   padding-top: 3.2rem;
-} */
+  padding-bottom: 3.2rem;
+}
+
+.copyright-span {
+  grid-column: 1 / -1;
+}
 
 .social-links {
   list-style: none;
