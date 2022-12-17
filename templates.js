@@ -59,7 +59,9 @@ class MyFooter extends HTMLElement {
                 </div>
                 <div class="footer-col">
                     <p class="footer-address">
-                    111 College Hill St, Cheney Washington 99004
+                    111 College Hill St
+                    </p> 
+                    <p class="footer-address">Cheney, Washington 99004
                     </p>
                     <a class="footer-link" href="mailto:rshredow@gmail.com"
                     >rshredow@gmail.com</a
