@@ -61,7 +61,7 @@ body {
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #fff;
-  background-color: #333;
+  background-color: #555;
   /* box-shadow: 0 1.2rem 3.2rem rbga(0, 0, 0, 0.1); */
 }
 
@@ -215,4 +215,29 @@ body {
 .section-fpgann a:visited {
   text-decoration: none;
   color: #767676;
+}
+
+.grid-col-2-heading{
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-button:link,
+.index-button:visited {
+  text-decoration: none;
+  font-size: 2.4rem;
+  color: #eee;
+  padding: 1.6rem 3.2rem;
+  background-color: #767676;
+}
+
+.index-button:hover,
+.index-button:active {
+  background-color: #555;
+}
+
+.index-textbox {
+  display: flex;
+  flex-direction: column;
 }
