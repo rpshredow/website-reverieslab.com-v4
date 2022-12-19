@@ -17,9 +17,10 @@ body {
 }
 
 iframe {
-  width: 100%;
+  /* max-width: 130rem; */
   height: 70rem;
-  margin-top: 3.2rem;
+  width: 130rem;
+  /* margin-top: 3.2rem; */
 }
 
 .container {
@@ -77,7 +78,7 @@ iframe {
 
 .section-intro {
   background-color: #eee;
-  padding: 4.8rem 0 9.6rem 0;
+  /* padding: 4.8rem 0 9.6rem 0; */
 }
 
 .intro {
@@ -106,7 +107,7 @@ iframe {
   /* display: flex; */
   /* justify-content: center; */
   line-height: 1;
-  margin-top: 3.2rem;
+  /* margin-top: 3.2rem; */
   /* margin-bottom: 3.2rem; */
 }
 
@@ -207,7 +208,7 @@ iframe {
 .grid-text {
   font-size: 1.6rem;
   line-height: 1.6;
-  margin-bottom: 2.4rem;
+  /* margin-bottom: 2.4rem; */
 }
 
 .grid-list {
@@ -217,19 +218,23 @@ iframe {
 .grid-col-2 {
   max-width: 130rem;
   margin: 0 auto;
-  padding: 0 3.2rem;
+  /* padding: 3.2rem 3.2rem; */
+  padding: 6.4rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 9.6rem;
+  gap: 6.4rem;
 }
 
-.grid-col-2-heading{
-  grid-column: 1 / -1;
+.flex-heading{
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 3.2rem 3.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.4rem;
+  background-color: #eee;
 }
 
 .index-button:link,
@@ -240,6 +245,7 @@ iframe {
   color: #eee;
   padding: 1.2rem 2.4rem;
   background-color: #767676;
+  margin: 2.4rem 0 2.4rem 0;
 }
 
 .index-button:hover,
@@ -266,4 +272,11 @@ iframe {
 .text-link:active {
   color: #fff;
   background-color: #555;
+}
+
+.nav-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
 }

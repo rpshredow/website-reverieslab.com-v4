@@ -2,9 +2,12 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
             <header class="header header-sticky">
-                <a href="index.html">
-                    <img class="logo" src="/logo.webp" alt="Reveries Lab Logo" />
-                </a>
+                <div class="nav-flex">
+                    <a href="index.html">
+                        <img class="logo" src="/logo.webp" alt="Reveries Lab Logo" />
+                    </a>
+                    <h2 class="heading-secondary">reveries.lab</h2> 
+                </div>
                 <nav class="main-nav">
                     <ul class="main-nav-list">
                     <li><a class="main-nav-link" href="/index.html">Home</a></li>
