@@ -1,7 +1,7 @@
 class MyHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-            <header class="header">
+            <header class="header header-sticky">
                 <a href="index.html">
                     <img class="logo" src="/logo.webp" alt="Reveries Lab Logo" />
                 </a>
