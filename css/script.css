@@ -127,8 +127,8 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 6.4rem;
-  row-gap: 9.6;
-  margin-top: 9.6rem;
+  row-gap: 1.6rem;
+  margin-top: 6.4rem;
 }
 
 .footer-link:link,
