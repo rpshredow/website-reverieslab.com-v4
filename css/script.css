@@ -76,11 +76,6 @@ iframe {
   /* box-shadow: 0 1.2rem 3.2rem rbga(0, 0, 0, 0.1); */
 }
 
-.section-intro {
-  background-color: #eee;
-  /* padding: 4.8rem 0 9.6rem 0; */
-}
-
 .intro {
   max-width: 130rem;
   margin: 0 auto;
@@ -205,10 +200,20 @@ iframe {
   height: auto;
 }
 
+.grid-imgbox {
+  padding: 3.2rem 3.2rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.055);
+}
+
 .grid-text {
   font-size: 1.6rem;
   line-height: 1.6;
   /* margin-bottom: 2.4rem; */
+}
+
+.grid-textbox {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.055);
+  padding: 3.2rem 3.2rem;
 }
 
 .grid-list {
@@ -235,6 +240,7 @@ iframe {
   justify-content: center;
   gap: 2.4rem;
   background-color: #eee;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.055);
 }
 
 .index-button:link,

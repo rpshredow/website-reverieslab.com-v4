@@ -32,9 +32,9 @@
       </div>
       
       <div class="grid-col-2">
-        <div class="grid-text">
-          <h4>MNIST Dataset</h4>
-          <p>
+        <div class="grid-textbox">
+          <h3 class="heading-tertiary">MNIST Dataset</h3>
+          <p class="grid-text">
             The thesis will be using the
             <a
               href="http://yann.lecun.com/exdb/mnist/"
@@ -60,22 +60,20 @@
             >
             which is generally used for image recognition.
           </p>
-          <p>
+          <p class="grid-text">
             This data set includes 60,000 training images and 10,000 testing
             images all include labels with what the number should be. Each image
             in the MNIST dataset is 28 x 28 pixels using 8-bit greyscale.
           </p>
         </div>
 
-        <div class="grid-text">
-          <p>
-            <img src="/media/mnist_plot.png" alt="" class="grid-img" />
-          </p>
+        <div class="grid-textbox">
+          <img src="/media/mnist_plot.png" alt="" class="grid-img" />
         </div>
 
-        <div class="grid-text">
-          <h4>Tally Numbering System</h4>
-          <p>
+        <div class="grid-textbox">
+          <h3 class="heading-tertiary">Tally Numbering System</h3>
+          <p class="grid-text">
             Instead of using the normal
             <a
               href="https://en.wikipedia.org/wiki/Binary_number"
@@ -104,11 +102,11 @@
             computation time / hardware used / energy used over conventional
             floating point and fixed point operations.
           </p>
-          <p>
+          <p class="grid-text">
             The most significant bit represents the sign, 0 for positive and 1
             for negative.
           </p>
-          <p>
+          <p class="grid-text">
             Addition and Subtraction is accomplished by bit shifting left or
             right. Bit shifting is computationally cheap and can be implemented
             with just a barrel shifter. As opposed to all the logic required for
@@ -119,19 +117,19 @@
           </p>
         </div>
 
-        <div class="grid-text">
-          <p>00011111 = 5</p>
-          <p>00011111 = 5</p>
-          <p>10001111 = -4</p>
-          <p>
+        <div class="grid-textbox">
+          <p class="grid-text">00011111 = 5</p>
+          <p class="grid-text">00011111 = 5</p>
+          <p class="grid-text">10001111 = -4</p>
+          <p class="grid-text">
             00001111 + 00000011 = 00111111 (4 + 2 = 6) the result is just 4 bit
             shifted to the left 2 spots and bitwise OR with 2.
           </p>
         </div>
 
-        <div class="grid-text">
-          <h4>Fractional Representation using Tally Numbering System</h4>
-          <p>
+        <div class="grid-textbox">
+          <h3 class="heading-tertiary">Fractional Representation using Tally Numbering System</h3>
+          <p class="grid-text">
             Fractional number representation, which I created, is done by
             picking a number for the total number of bits to be used such as 16,
             plus a signed bit. Note that choosing a large number may consume a
@@ -141,21 +139,21 @@
             between represents fractions such as eight 0s and eight 1s is equal
             to 0.5 and twelve 0s and four 1s equals 0.25.
           </p>
-          <p>
+          <p class="grid-text">
             Mathematical Operations are the same as before. Fitting data to this
             system is just rounding to the nearest fraction.
           </p>
         </div>
 
-        <div class="grid-text">
-          <p>1111111111111111 = 1</p>
-          <p>0000000000000000 = 0</p>
-          <p>0000000011111111 = 8</p>
-          <p>0000000000001111 = 0.25</p>
+        <div class="grid-textbox">
+          <p class="grid-text">1111111111111111 = 1</p>
+          <p class="grid-text">0000000000000000 = 0</p>
+          <p class="grid-text">0000000011111111 = 8</p>
+          <p class="grid-text">0000000000001111 = 0.25</p>
         </div>
 
-        <div class="grid-text">
-          <p>
+        <div class="grid-textbox">
+          <p class="grid-text">
             Multiplication and Division is done by reflecting the bit string
             through a matrix with a slope of the number that is being multiplied
             or divided by. This is implemented using a look up table because
@@ -166,20 +164,18 @@
           </p>
         </div>
 
-        <div>
-          <p>
+        <div class="grid-imgbox">
             <img src="/media/ymx.png" alt="" class="grid-img" />
-          </p>
         </div>
 
-        <div class="grid-text">
-          <h4>Neural Network Architecture</h4>
-          <p>
+        <div class="grid-textbox">
+          <h3 class="heading-tertiary">Neural Network Architecture</h3>
+          <p class="grid-text">
             The neural net will be a basic feed forward network at first using
             pre calculated weights used from a separate multi-layer perceptron
             that was trained on the MNIST data.
           </p>
-          <p>
+          <p class="grid-text">
             Currently I'm working on a multi-layer perceptron to implement on
             the FPGA. The perceptron will consist of 3 layers, and input layer
             of 784 nodes because each MNIST image is 28x28 which equals 784, the
@@ -189,10 +185,8 @@
           </p>
         </div>
 
-        <div>
-          <p>
+        <div class="grid-imgbox">
             <img src="/media/mnist_2layers.png" alt="" class="grid-img" />
-          </p>
         </div>
       </div>
     </section>

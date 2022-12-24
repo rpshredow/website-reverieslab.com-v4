@@ -24,20 +24,20 @@
         <h3 class="heading-secondary">3D Terrain using Three.js</h3>
       </div>
       <div class="grid-col-2">
-        <div class="grid-text">
+        <div class="grid-textbox">
           <!-- <p>
             Use tab to enter the input boxes and use ctrl-v to paste latitude,
             longitude, and zoom. The latitude and longitude of Mt Elbert is
             39.1178 and 106.4452 and the best zooms are between 10 and 15.
           </p> -->
-          <p>
+          <p class="grid-text">
             This project was to turn a AWS public dataset for terrain heights
             into 3D representation using a WebGL wrapper called Three.js.
             Three.js makes using WebGL easier to use. The terrain data is
             represented in .png images whose dimensions are 256x256 where
             terrain heights are decoded from the RGB values.
           </p>
-          <p>
+          <p class="grid-text">
             The last three numbers in the URL are the zoom, x tile and y tile,
             https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png.
             The tiles are retrieved by a formula where you input the latitude
@@ -46,16 +46,16 @@
           </p>
         </div>
 
-        <div>
+        <div class="grid-imgbox">
           <img src="/media/terrain1.jpg" class="grid-img" />
         </div>
 
-        <div>
+        <div class="grid-imgbox">
           <img src="/media/terrain3.jpg" class="grid-img" />
         </div>
 
-        <div class="grid-text">
-          <p>
+        <div class="grid-textbox">
+          <p class="grid-text">
             The pipeline goes as follows, the user inputs the zoom, latitude and
             longitude of the area they want displayed into the page, that is
             converted to x and y tile values for that zoom value with
@@ -72,8 +72,8 @@
           </p>
         </div>
 
-        <div class="grid-text">
-          <p>
+        <div class="grid-textbox">
+          <p class="grid-text">
             Further work that needs to be done is to prefetch information for
             more surrounding tiles and for different zoom levels at that
             location. Multithreaded processing could be used to retrieve and
@@ -83,7 +83,7 @@
             fast.
           </p>
         </div>
-        <div>
+        <div class="grid-imgbox">
           <img src="/media/terrain2.jpg" class="grid-img" />
         </div>
       </div>
