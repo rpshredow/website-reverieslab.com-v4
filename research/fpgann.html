@@ -67,8 +67,8 @@
           </p>
         </div>
 
-        <div class="grid-textbox">
-          <img src="/media/mnist_plot.png" alt="" class="grid-img" />
+        <div class="grid-imgbox">
+          <img src="/media/mnist_plot.png" onclick="onClickImg(this)" alt="" class="grid-img" />
         </div>
 
         <div class="grid-textbox">
@@ -165,7 +165,7 @@
         </div>
 
         <div class="grid-imgbox">
-            <img src="/media/ymx.png" alt="" class="grid-img" />
+            <img src="/media/ymx.png" onclick="onClickImg(this)" alt="" class="grid-img" />
         </div>
 
         <div class="grid-textbox">
@@ -186,10 +186,20 @@
         </div>
 
         <div class="grid-imgbox">
-            <img src="/media/mnist_2layers.png" alt="" class="grid-img" />
+            <img src="/media/mnist_2layers.png" onclick="onClickImg(this)" alt="" class="grid-img" />
         </div>
       </div>
     </section>
+
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+      <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="modal-content">
+        <img id="img-modal" class="img-modal">
+      </div>
+    </div>
+
     <my-footer></my-footer>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

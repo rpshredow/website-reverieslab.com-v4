@@ -47,11 +47,11 @@
         </div>
 
         <div class="grid-imgbox">
-          <img src="/media/terrain1.jpg" class="grid-img" />
+          <img src="/media/terrain1.jpg" onclick="onClickImg(this)" class="grid-img" />
         </div>
 
         <div class="grid-imgbox">
-          <img src="/media/terrain3.jpg" class="grid-img" />
+          <img src="/media/terrain3.jpg" onclick="onClickImg(this)" class="grid-img" />
         </div>
 
         <div class="grid-textbox">
@@ -84,10 +84,20 @@
           </p>
         </div>
         <div class="grid-imgbox">
-          <img src="/media/terrain2.jpg" class="grid-img" />
+          <img src="/media/terrain2.jpg" onclick="onClickImg(this)" class="grid-img" />
         </div>
       </div>
     </section>
+    
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+      <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="modal-content">
+        <img id="img-modal" class="img-modal">
+      </div>
+    </div>
+
     <my-footer></my-footer>
+    
+    <script src="/js/script.js"></script>
   </body>
 </html>

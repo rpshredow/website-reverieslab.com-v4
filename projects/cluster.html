@@ -31,7 +31,7 @@
       </div>
       <div class="grid-col-2">
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/cluster5.jpg" />
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/cluster5.jpg" />
         </div>
         <div class="grid-textbox">
           <ol type="1">
@@ -94,7 +94,7 @@
           </ol>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/cluster1.jpg" />
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/cluster1.jpg" />
         </div>
         <div class="grid-textbox">
           <p class="grid-text">
@@ -104,7 +104,7 @@
           </p>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/cluster2.jpg" />
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/cluster2.jpg" />
         </div>
         <div class="grid-textbox">
           <p class="grid-text">
@@ -115,7 +115,7 @@
           </p>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/cluster3.jpg" />
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/cluster3.jpg" />
         </div>
         <div class="grid-textbox">
           <p class="grid-text">
@@ -126,7 +126,7 @@
           </p>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/cluster4.jpg" />
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/cluster4.jpg" />
         </div>
         <div class="grid-textbox">
           <p class="grid-text">
@@ -139,6 +139,16 @@
         </div>
       </div>
     </section>
+
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+      <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="modal-content">
+        <img id="img-modal" class="img-modal">
+      </div>
+    </div>
+
     <my-footer></my-footer>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

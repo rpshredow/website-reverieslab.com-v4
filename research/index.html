@@ -30,7 +30,7 @@
           <a class="index-button" href="thesis.html">More info</a>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/thesis.webp" alt="Masters thesis cover page">
+            <img class="grid-img" onclick="onClickImg(this)" src="/media/thesis.webp" alt="Masters thesis cover page">
         </div>
         <div class="grid-textbox">
           <h3 class="heading-tertiary">FPGA Neural Network</h3>
@@ -38,11 +38,20 @@
           <a class="index-button" href="fpgann.html">More info</a>
         </div>
         <div class="grid-imgbox">
-          <img class="grid-img" src="/media/mnist_2layers.webp" alt="Picture of multilayer perceptron for mnist dataset">
+          <img class="grid-img" onclick="onClickImg(this)" src="/media/mnist_2layers.webp" alt="Picture of multilayer perceptron for mnist dataset">
         </div>
       </div>
     </section>
-    <section>
+    
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+      <span class="close">&times;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="modal-content">
+        <img id="img-modal" class="img-modal">
+      </div>
+    </div>
+
     <my-footer></my-footer>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>
